@@ -21,43 +21,75 @@ export default function Home() {
         <div className="absolute top-0 right-0 bottom-0 w-[80%] md:w-[55%] bg-[#6A1525] transform skew-x-[-15deg] translate-x-[25%] origin-bottom-right z-0 opacity-50"></div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
-          <div className="max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            {/* Logo Replica */}
-            <div className="w-28 h-28 bg-white shadow-md flex items-center justify-center mb-8 p-2">
-              <div className="w-full h-full rounded-full border-[3px] border-[#8B1C31] flex items-center justify-center relative">
-                <div className="absolute inset-1 rounded-full border-[1.5px] border-[#8B1C31]"></div>
-                <span className="text-5xl font-bold text-[#8B1C31] italic pr-1">N</span>
-                {/* Small curved text simulation */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
-                  <path id="curve" d="M 20 80 A 40 40 0 0 0 80 80" fill="transparent" />
-                  <text className="text-[6px] fill-[#8B1C31] font-bold tracking-widest">
-                    <textPath href="#curve" startOffset="50%" textAnchor="middle">Naureen Akhtar Raja & Co</textPath>
-                  </text>
-                </svg>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
+              {/* Logo Replica */}
+              <div className="w-28 h-28 bg-white shadow-md flex items-center justify-center mb-8 p-2">
+                <div className="w-full h-full rounded-full border-[3px] border-[#8B1C31] flex items-center justify-center relative">
+                  <div className="absolute inset-1 rounded-full border-[1.5px] border-[#8B1C31]"></div>
+                  <span className="text-5xl font-bold text-[#8B1C31] italic pr-1">N</span>
+                  {/* Small curved text simulation */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+                    <path id="curve" d="M 20 80 A 40 40 0 0 0 80 80" fill="transparent" />
+                    <text className="text-[6px] fill-[#8B1C31] font-bold tracking-widest">
+                      <textPath href="#curve" startOffset="50%" textAnchor="middle">Naureen Akhtar Raja & Co</textPath>
+                    </text>
+                  </svg>
+                </div>
+              </div>
+
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#8B1C31] leading-[1.05] uppercase mb-6">
+                Naureen Akhtar<br/>Raja & Co.
+              </h1>
+
+              <p className="text-xl md:text-2xl text-[#8B1C31] font-bold mb-10">
+                Chartered Accountants (ICAP Registered Firm)
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-[#8B1C31] text-white font-bold hover:bg-[#6A1525] transition-colors shadow-lg text-sm md:text-base"
+                >
+                  Request Consultation
+                </Link>
+                <Link 
+                  href="/services"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-[#8B1C31] text-[#8B1C31] font-bold hover:bg-[#8B1C31]/5 transition-colors text-sm md:text-base"
+                >
+                  Explore Services
+                </Link>
               </div>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#8B1C31] leading-[1.05] uppercase mb-6">
-              Naureen Akhtar<br/>Raja & Co.
-            </h1>
+            <div className="relative hidden lg:block animate-in fade-in zoom-in-95 duration-1000 delay-200">
+              {/* Abstract 3D-like composition */}
+              <div className="relative w-full aspect-square max-w-lg mx-auto">
+                {/* Glass Cards Floating */}
+                <div className="absolute top-[10%] right-[10%] w-64 p-6 rounded-2xl bg-white/90 backdrop-blur-xl border border-white/50 shadow-2xl animate-[bounce_6s_infinite]">
+                  <div className="w-10 h-10 rounded-full bg-[#8B1C31]/10 flex items-center justify-center mb-4">
+                    <CheckCircle2 className="w-6 h-6 text-[#8B1C31]" />
+                  </div>
+                  <h3 className="text-slate-900 font-bold mb-2">Audit Excellence</h3>
+                  <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="w-[85%] h-full bg-[#8B1C31] rounded-full"></div>
+                  </div>
+                </div>
 
-            <p className="text-xl md:text-2xl text-[#8B1C31] font-bold mb-10">
-              Chartered Accountants (ICAP Registered Firm)
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#8B1C31] text-white font-bold hover:bg-[#6A1525] transition-colors shadow-lg text-sm md:text-base"
-              >
-                Request Consultation
-              </Link>
-              <Link 
-                href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-[#8B1C31] text-[#8B1C31] font-bold hover:bg-[#8B1C31]/5 transition-colors text-sm md:text-base"
-              >
-                Explore Services
-              </Link>
+                <div className="absolute bottom-[20%] left-[5%] w-72 p-6 rounded-2xl bg-white/90 backdrop-blur-xl border border-white/50 shadow-2xl animate-[bounce_7s_infinite_1s]">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-slate-900 font-bold">Tax Optimization</h3>
+                    <span className="text-green-600 text-sm font-bold">+24%</span>
+                  </div>
+                  <div className="flex items-end gap-2 h-16">
+                    {[40, 70, 45, 90, 65, 100].map((h, i) => (
+                      <div key={i} className="w-full bg-[#8B1C31]/20 rounded-t-sm" style={{ height: `${h}%` }}>
+                        <div className="w-full bg-[#8B1C31] rounded-t-sm transition-all duration-1000" style={{ height: `${h * 0.8}%` }}></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
