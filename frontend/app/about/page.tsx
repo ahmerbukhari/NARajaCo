@@ -45,10 +45,10 @@ export default function AboutPage() {
               Building <span className="text-[#8B1C31]">Trust</span> Through Excellence.
             </h1>
             <p className="text-xl text-slate-600 font-medium leading-relaxed mb-6">
-              Founded on the principles of integrity and professional rigor, Naureen Akhtar Raja & Co. has grown into a premier chartered accountancy firm trusted by industry leaders.
+              Naureen Akhtar Raja & Co. is a Chartered Accountancy firm registered with ICAP, providing Audit, Taxation, Advisory, Business Process Solutions, and Technology.
             </p>
             <p className="text-lg text-slate-600 font-medium leading-relaxed">
-              Our journey began with a simple mission: to provide unparalleled financial and advisory services that empower organizations to achieve their strategic goals. Today, we continue that legacy, combining deep technical expertise with innovative thinking to solve the most complex business challenges.
+              We are committed to delivering value driven, reliable, and practical solutions to help businesses grow while ensuring compliance with local and international standards.
             </p>
           </div>
           <div className="relative">
