@@ -56,7 +56,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className={`hidden lg:flex items-center gap-8 ${!isScrolled ? 'bg-white/90 backdrop-blur-md px-6 py-2.5 rounded-full shadow-sm border border-slate-200/50' : ''}`}>
           {navLinks.map((link) => (
             <div
               key={link.name}
@@ -69,7 +69,7 @@ export default function Navbar() {
                 className={`flex items-center gap-1 text-sm font-semibold transition-colors ${
                   pathname === link.href || pathname.startsWith(`${link.href}/`)
                     ? "text-[#8B1C31]"
-                    : isScrolled ? "text-slate-600 hover:text-[#8B1C31]" : "text-slate-700 hover:text-[#8B1C31]"
+                    : "text-slate-700 hover:text-[#8B1C31]"
                 }`}
               >
                 {link.name}
@@ -114,7 +114,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className={`lg:hidden p-2 ${isScrolled ? 'text-slate-900' : 'text-[#8B1C31]'}`}
+          className={`lg:hidden p-2 ${isScrolled ? 'text-slate-900' : 'text-[#8B1C31] bg-white/90 backdrop-blur-md rounded-full shadow-sm'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
