@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Shield, Target, Users, Award, CheckCircle2, ArrowRight } from "lucide-react";
+import { Shield, Target, Users, Award, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata = {
   title: "About Us | Naureen Akhtar Raja & Co.",
@@ -33,44 +33,154 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white pt-32 pb-24">
-      {/* Hero Section */}
+      {/* Hero Section - Redesigned to match the provided image */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8B1C31]/10 border border-[#8B1C31]/20 w-fit mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#8B1C31]"></span>
-              <span className="text-sm font-bold text-[#8B1C31]">Our Story</span>
+        <div className="relative bg-[#EAECEF] rounded-3xl overflow-hidden shadow-xl">
+          {/* Background Building Image Overlay */}
+          <div className="absolute inset-0 opacity-20 mix-blend-multiply bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          
+          {/* Diagonal Burgundy Shapes */}
+          <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-[#8B1C31] transform translate-x-[30%] -translate-y-[30%] rotate-45 z-0"></div>
+          <div className="absolute bottom-0 right-0 w-[60%] h-[100%] bg-[#8B1C31] transform translate-x-[30%] translate-y-[30%] rotate-45 z-0"></div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 p-12 md:p-16">
+            {/* Left Content */}
+            <div className="flex flex-col gap-8">
+              <h1 className="text-5xl md:text-6xl font-extrabold text-[#8B1C31] tracking-tight uppercase">
+                ABOUT US
+              </h1>
+              
+              <div className="space-y-6">
+                <p className="text-xl text-[#8B1C31] font-bold leading-relaxed">
+                  Naureen Akhtar Raja & Co. is a Chartered Accountancy firm registered with ICAP, providing Audit, Taxation, Advisory, Business Process Solutions, and Technology.
+                </p>
+                
+                <p className="text-xl text-[#8B1C31] font-bold leading-relaxed">
+                  We are committed to delivering value driven, reliable, and practical solutions to help businesses grow while ensuring compliance with local and international standards.
+                </p>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="flex items-center gap-4 mt-4">
+                <div className="flex gap-1 text-[#8B1C31]">
+                  <Sparkles className="w-6 h-6 fill-current" />
+                  <Sparkles className="w-6 h-6 fill-current" />
+                  <Sparkles className="w-6 h-6 fill-current" />
+                </div>
+                <div className="h-1 w-48 bg-[#8B1C31] rounded-full"></div>
+              </div>
+
+              {/* Logo Watermark */}
+              <div className="mt-8 opacity-50">
+                <div className="w-24 h-24 rounded-full border-[3px] border-[#8B1C31] flex items-center justify-center relative">
+                  <div className="absolute inset-1 rounded-full border-[1.5px] border-[#8B1C31]"></div>
+                  <span className="text-4xl font-bold text-[#8B1C31] italic pr-1">N</span>
+                </div>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
-              Building <span className="text-[#8B1C31]">Trust</span> Through Excellence.
-            </h1>
-            <p className="text-xl text-slate-600 font-medium leading-relaxed mb-6">
-              Founded on the principles of integrity and professional rigor, Naureen Akhtar Raja & Co. has grown into a premier chartered accountancy firm trusted by industry leaders.
-            </p>
-            <p className="text-lg text-slate-600 font-medium leading-relaxed">
-              Our journey began with a simple mission: to provide unparalleled financial and advisory services that empower organizations to achieve their strategic goals. Today, we continue that legacy, combining deep technical expertise with innovative thinking to solve the most complex business challenges.
-            </p>
+
+            {/* Right Image Diamond */}
+            <div className="hidden lg:flex justify-center items-center relative h-full min-h-[500px]">
+              <div className="absolute w-[80%] aspect-square bg-white transform rotate-45 overflow-hidden border-8 border-white shadow-2xl z-20">
+                <div className="absolute inset-[-20%] transform -rotate-45 bg-[url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center"></div>
+              </div>
+            </div>
           </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-[#8B1C31]/10 rounded-3xl blur-2xl"></div>
-            <div className="relative bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 shadow-xl">
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">20+</div>
-                  <div className="text-sm font-bold text-slate-600">Years of Experience</div>
+        </div>
+      </div>
+
+      {/* Vision Section */}
+      <div className="max-w-7xl mx-auto px-6 md:px-8 mb-24">
+        <div className="relative bg-[#EAECEF] rounded-3xl overflow-hidden shadow-xl py-24 px-8 text-center">
+          {/* Background Building Image Overlay */}
+          <div className="absolute inset-0 opacity-10 mix-blend-multiply bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          
+          {/* Side Images (Triangles) */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-white transform -translate-x-1/2 rotate-45 overflow-hidden z-0 hidden md:block">
+            <div className="absolute inset-[-50%] transform -rotate-45 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          </div>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-white transform translate-x-1/2 rotate-45 overflow-hidden z-0 hidden md:block">
+            <div className="absolute inset-[-50%] transform -rotate-45 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          </div>
+
+          <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            <h2 className="text-5xl md:text-6xl font-extrabold text-[#8B1C31] tracking-tight uppercase mb-12">
+              OUR VISION
+            </h2>
+            
+            <p className="text-2xl md:text-3xl text-[#8B1C31] font-bold leading-relaxed mb-16">
+              To raise the bar for professional services by making value-driven delivery the standard of quality. We empower clients, teams, and shareholders through impactful, transparent, and value for every stakeholder.
+            </p>
+
+            {/* Decorative Elements */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex items-center gap-4">
+                <div className="flex gap-1 text-[#8B1C31]">
+                  <Sparkles className="w-6 h-6 fill-current" />
+                  <Sparkles className="w-6 h-6 fill-current" />
+                  <Sparkles className="w-6 h-6 fill-current" />
                 </div>
-                <div>
-                  <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">500+</div>
-                  <div className="text-sm font-bold text-slate-600">Clients Worldwide</div>
+                <div className="h-1 w-64 bg-[#8B1C31] rounded-full"></div>
+              </div>
+              
+              {/* Logo Watermark */}
+              <div className="mt-8 opacity-50">
+                <div className="w-20 h-20 rounded-full border-[3px] border-[#8B1C31] flex items-center justify-center relative">
+                  <div className="absolute inset-1 rounded-full border-[1.5px] border-[#8B1C31]"></div>
+                  <span className="text-3xl font-bold text-[#8B1C31] italic pr-1">N</span>
                 </div>
-                <div>
-                  <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">50+</div>
-                  <div className="text-sm font-bold text-slate-600">Expert Professionals</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mission Section */}
+      <div className="max-w-7xl mx-auto px-6 md:px-8 mb-24">
+        <div className="relative bg-[#EAECEF] rounded-3xl overflow-hidden shadow-xl py-24 px-8 md:px-16">
+          {/* Background Building Image Overlay */}
+          <div className="absolute inset-0 opacity-10 mix-blend-multiply bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          
+          {/* Side Images (Triangles) */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-white transform -translate-x-1/2 rotate-45 overflow-hidden z-0 hidden md:block">
+            <div className="absolute inset-[-50%] transform -rotate-45 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          </div>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-white transform translate-x-1/2 rotate-45 overflow-hidden z-0 hidden md:block">
+            <div className="absolute inset-[-50%] transform -rotate-45 bg-[url('https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+          </div>
+
+          <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            <h2 className="text-5xl md:text-6xl font-extrabold text-[#8B1C31] tracking-tight uppercase mb-16 text-center">
+              OUR MISSION
+            </h2>
+            
+            <div className="flex flex-col gap-12 w-full">
+              {/* Mission Point 1 */}
+              <div className="flex items-start gap-6 md:gap-8">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#8B1C31] flex items-center justify-center shrink-0 shadow-lg">
+                  <span className="text-3xl md:text-4xl font-extrabold text-white">1</span>
                 </div>
-                <div>
-                  <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">15+</div>
-                  <div className="text-sm font-bold text-slate-600">Global Partners</div>
+                <p className="text-xl md:text-2xl text-[#8B1C31] font-bold leading-relaxed pt-2">
+                  Our mission is to empower our stakeholders through value driven business practices.
+                </p>
+              </div>
+
+              {/* Mission Point 2 */}
+              <div className="flex items-start gap-6 md:gap-8">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#8B1C31] flex items-center justify-center shrink-0 shadow-lg">
+                  <span className="text-3xl md:text-4xl font-extrabold text-white">2</span>
                 </div>
+                <p className="text-xl md:text-2xl text-[#8B1C31] font-bold leading-relaxed pt-2">
+                  Excercise a working model that fosters skillset and client focus via innovative methodologies and continuous improvement.
+                </p>
+              </div>
+            </div>
+
+            {/* Logo Watermark */}
+            <div className="mt-16 opacity-50">
+              <div className="w-20 h-20 rounded-full border-[3px] border-[#8B1C31] flex items-center justify-center relative">
+                <div className="absolute inset-1 rounded-full border-[1.5px] border-[#8B1C31]"></div>
+                <span className="text-3xl font-bold text-[#8B1C31] italic pr-1">N</span>
               </div>
             </div>
           </div>
@@ -104,45 +214,8 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Credentials & Affiliations */}
-      <div className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Credentials & Affiliations</h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
-                We are proud to be recognized by leading professional bodies and regulatory authorities. Our credentials reflect our unwavering commitment to quality, compliance, and continuous professional development.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Institute of Chartered Accountants",
-                  "Public Company Accounting Oversight Board (PCAOB)",
-                  "International Federation of Accountants (IFAC)",
-                  "Certified Public Accountants Association"
-                ].map((credential, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#8B1C31] shrink-0" />
-                    <span className="text-slate-700 font-bold">{credential}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="aspect-square rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all duration-500 shadow-sm">
-                  {/* Placeholder for credential logos */}
-                  <div className="text-slate-400 font-bold text-xl text-center">
-                    Credential<br/>Logo {i}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Leadership Team */}
-      <div className="bg-slate-50 py-24 border-y border-slate-200">
+      <div className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Our Leadership</h2>
@@ -175,7 +248,7 @@ export default function AboutPage() {
       </div>
 
       {/* CTA */}
-      <div className="py-24 text-center bg-white">
+      <div className="py-24 text-center bg-slate-50 border-t border-slate-200">
         <div className="max-w-3xl mx-auto px-6 md:px-8">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Ready to work with us?</h2>
           <p className="text-xl text-slate-600 mb-10 font-medium">
