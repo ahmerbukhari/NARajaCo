@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import { services, industries } from "@/lib/data";
 import ServiceCard from "@/components/ServiceCard";
@@ -31,12 +30,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-col gap-6"
-            >
+            <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md w-fit">
                 <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
                 <span className="text-sm font-medium text-slate-300">Excellence in Chartered Accountancy</span>
@@ -65,24 +59,15 @@ export default function Home() {
                   Explore Services
                 </Link>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
+            <div className="relative hidden lg:block animate-in fade-in zoom-in-95 duration-1000 delay-200">
               {/* Abstract 3D-like composition */}
               <div className="relative w-full aspect-square max-w-lg mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
                 
                 {/* Glass Cards Floating */}
-                <motion.div 
-                  animate={{ y: [0, -20, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-[10%] right-[10%] w-64 p-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl"
-                >
+                <div className="absolute top-[10%] right-[10%] w-64 p-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl animate-[bounce_6s_infinite]">
                   <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center mb-4">
                     <CheckCircle2 className="w-6 h-6 text-amber-500" />
                   </div>
@@ -90,13 +75,9 @@ export default function Home() {
                   <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
                     <div className="w-[85%] h-full bg-amber-500 rounded-full"></div>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div 
-                  animate={{ y: [0, 20, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute bottom-[20%] left-[5%] w-72 p-6 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-2xl"
-                >
+                <div className="absolute bottom-[20%] left-[5%] w-72 p-6 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-2xl animate-[bounce_7s_infinite_1s]">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">Tax Optimization</h3>
                     <span className="text-green-400 text-sm font-medium">+24%</span>
@@ -108,9 +89,9 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
         
