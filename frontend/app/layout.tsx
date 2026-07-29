@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -160,6 +161,17 @@ export default function RootLayout({
 })();
 `}
         </Script>
+        <NextTopLoader 
+          color="#8B1C31"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #8B1C31,0 0 5px #8B1C31"
+        />
         <Navbar />
         <main className="flex-grow">
           {children}
