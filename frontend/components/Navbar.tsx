@@ -28,8 +28,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services", hasDropdown: true, items: services, dropdownWidth: "w-[700px]" },
-    { name: "Industries", href: "/industries", hasDropdown: true, items: industries, dropdownWidth: "w-[850px]" },
+    { name: "Services", href: "/services", hasDropdown: true, items: services, dropdownWidth: "w-[700px]", dropdownOffset: "-translate-x-1/2" },
+    { name: "Industries", href: "/industries", hasDropdown: true, items: industries, dropdownWidth: "w-[850px]", dropdownOffset: "-translate-x-3/4" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -78,7 +78,7 @@ export default function Navbar() {
 
               {/* Desktop Dropdown */}
               {link.hasDropdown && activeDropdown === link.name && (
-                <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50 ${link.dropdownWidth || 'w-[600px]'}`}>
+                <div className={`absolute top-full left-1/2 pt-4 z-50 ${link.dropdownOffset || '-translate-x-1/2'} ${link.dropdownWidth || 'w-[600px]'}`}>
                   <div className="bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden grid grid-cols-2 p-4 gap-2 animate-in fade-in slide-in-from-top-2 duration-200 items-start">
                     {link.items?.map((item) => {
                       const Icon = item.icon;
