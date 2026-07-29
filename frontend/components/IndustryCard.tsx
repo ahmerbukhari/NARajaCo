@@ -17,22 +17,22 @@ export default function IndustryCard({ industry }: IndustryCardProps) {
   return (
     <Link 
       href={`/industries/${industry.slug}`}
-      className="group relative overflow-hidden bg-slate-900/50 backdrop-blur-xl border border-white/5 rounded-2xl p-8 hover:bg-slate-800/80 hover:border-white/10 transform hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+      className="group relative overflow-hidden bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:border-[#8B1C31]/30 transform hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
     >
       <div className="flex items-center gap-4 mb-4">
-        <div className="p-3 rounded-lg bg-white/5 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+        <div className="p-3 rounded-lg bg-[#8B1C31]/10 text-[#8B1C31] group-hover:bg-[#8B1C31] group-hover:text-white transition-colors duration-300">
           <Icon className="w-6 h-6" />
         </div>
-        <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+        <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#8B1C31] transition-colors">
           {industry.name}
         </h3>
       </div>
       
-      <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+      <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow font-medium">
         {industry.shortDescription}
       </p>
       
-      <div className="flex items-center text-slate-300 text-sm font-medium mt-auto group-hover:text-amber-500 transition-colors">
+      <div className="flex items-center text-slate-500 text-sm font-bold mt-auto group-hover:text-[#8B1C31] transition-colors">
         <span>Explore sector</span>
         <ArrowRight className="w-4 h-4 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
       </div>
