@@ -28,8 +28,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services", hasDropdown: true, items: services },
-    { name: "Industries", href: "/industries", hasDropdown: true, items: industries },
+    { name: "Services", href: "/services", hasDropdown: true, items: services, dropdownWidth: "w-[700px]" },
+    { name: "Industries", href: "/industries", hasDropdown: true, items: industries, dropdownWidth: "w-[850px]" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -78,7 +78,7 @@ export default function Navbar() {
 
               {/* Desktop Dropdown */}
               {link.hasDropdown && activeDropdown === link.name && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[600px] z-50">
+                <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50 ${link.dropdownWidth || 'w-[600px]'}`}>
                   <div className="bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden grid grid-cols-2 p-4 gap-2 animate-in fade-in slide-in-from-top-2 duration-200 items-start">
                     {link.items?.map((item) => {
                       const Icon = item.icon;
@@ -91,8 +91,8 @@ export default function Navbar() {
                           <div className="mt-0.5 p-2 rounded-lg bg-[#8B1C31]/10 text-[#8B1C31] group-hover/item:bg-[#8B1C31] group-hover/item:text-white transition-colors shrink-0">
                             <Icon className="w-4 h-4" />
                           </div>
-                          <div>
-                            <div className="text-sm font-bold text-slate-900 mb-0.5 group-hover/item:text-[#8B1C31] transition-colors">
+                          <div className="min-w-0 flex-1">
+                            <div className="text-sm font-bold text-slate-900 mb-0.5 group-hover/item:text-[#8B1C31] transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
                               {item.name}
                             </div>
                             <div className="text-xs text-slate-500 line-clamp-2">
