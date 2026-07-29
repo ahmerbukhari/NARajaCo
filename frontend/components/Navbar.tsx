@@ -78,33 +78,35 @@ export default function Navbar() {
 
               {/* Desktop Dropdown */}
               {link.hasDropdown && activeDropdown === link.name && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden grid grid-cols-2 p-4 gap-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                  {link.items?.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.slug}
-                        href={`${link.href}/${item.slug}`}
-                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item"
-                      >
-                        <div className="mt-0.5 p-2 rounded-lg bg-[#8B1C31]/10 text-[#8B1C31] group-hover/item:bg-[#8B1C31] group-hover/item:text-white transition-colors">
-                          <Icon className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-bold text-slate-900 mb-0.5 group-hover/item:text-[#8B1C31] transition-colors">
-                            {item.name}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[600px] z-50">
+                  <div className="bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden grid grid-cols-2 p-4 gap-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                    {link.items?.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.slug}
+                          href={`${link.href}/${item.slug}`}
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item"
+                        >
+                          <div className="mt-0.5 p-2 rounded-lg bg-[#8B1C31]/10 text-[#8B1C31] group-hover/item:bg-[#8B1C31] group-hover/item:text-white transition-colors">
+                            <Icon className="w-4 h-4" />
                           </div>
-                          <div className="text-xs text-slate-500 line-clamp-1">
-                            {item.shortDescription}
+                          <div>
+                            <div className="text-sm font-bold text-slate-900 mb-0.5 group-hover/item:text-[#8B1C31] transition-colors">
+                              {item.name}
+                            </div>
+                            <div className="text-xs text-slate-500 line-clamp-1">
+                              {item.shortDescription}
+                            </div>
                           </div>
-                        </div>
+                        </Link>
+                      );
+                    })}
+                    <div className="col-span-2 mt-2 pt-2 border-t border-slate-100 text-center">
+                      <Link href={link.href} className="text-xs font-bold text-[#8B1C31] hover:text-[#6A1525] transition-colors">
+                        View all {link.name.toLowerCase()} &rarr;
                       </Link>
-                    );
-                  })}
-                  <div className="col-span-2 mt-2 pt-2 border-t border-slate-100 text-center">
-                    <Link href={link.href} className="text-xs font-bold text-[#8B1C31] hover:text-[#6A1525] transition-colors">
-                      View all {link.name.toLowerCase()} &rarr;
-                    </Link>
+                    </div>
                   </div>
                 </div>
               )}
