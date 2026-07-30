@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { services, industries } from "@/lib/data";
@@ -43,15 +44,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-white rounded-sm shadow-sm flex items-center justify-center p-1 border border-slate-100">
-            <div className="w-full h-full rounded-full border-2 border-[#8B1C31] flex items-center justify-center relative">
-              <div className="absolute inset-[2px] rounded-full border border-[#8B1C31]"></div>
-              <span className="text-lg font-bold text-[#8B1C31] italic">N</span>
-            </div>
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Naureen Akhtar Raja & Co. logo"
+            width={44}
+            height={44}
+            priority
+            className="w-10 h-10 object-contain"
+          />
           <div className="flex flex-col">
-            <span className={`font-bold text-lg leading-tight tracking-tight transition-colors ${isScrolled ? 'text-[#8B1C31]' : 'text-[#8B1C31]'}`}>Naureen Akhtar</span>
-            <span className={`text-xs font-semibold tracking-widest uppercase transition-colors ${isScrolled ? 'text-slate-600' : 'text-slate-700'}`}>Raja & Co.</span>
+            <span className="font-bold text-lg leading-tight tracking-tight text-[#8B1C31]">Naureen Akhtar</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-[#8B1C31]">Raja & Co.</span>
           </div>
         </Link>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
@@ -10,12 +11,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-sm flex items-center justify-center p-1">
-                <div className="w-full h-full rounded-full border-2 border-[#8B1C31] flex items-center justify-center relative">
-                  <div className="absolute inset-[2px] rounded-full border border-[#8B1C31]"></div>
-                  <span className="text-lg font-bold text-[#8B1C31] italic">N</span>
-                </div>
-              </div>
+              <Image
+                src="/logo-white.png"
+                alt="Naureen Akhtar Raja & Co. logo"
+                width={44}
+                height={44}
+                className="w-11 h-11 object-contain"
+              />
               <div className="flex flex-col">
                 <span className="text-white font-bold text-lg leading-tight tracking-tight">Naureen Akhtar</span>
                 <span className="text-white/70 text-xs font-semibold tracking-widest uppercase">Raja & Co.</span>

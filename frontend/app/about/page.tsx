@@ -126,6 +126,24 @@ export default function AboutPage() {
         </p>
       </PageHero>
 
+      {/* Who We Are / What We Stand For */}
+      <div className="max-w-7xl mx-auto px-6 md:px-8 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">Who We Are</h2>
+            <p className="text-lg text-slate-600 font-medium leading-relaxed">
+              With the experience of best in class and the ideology to deliver best in class, we strive to be the best business in the region, with solutions tailored to the needs of every customer.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">What We Stand For</h2>
+            <p className="text-lg text-slate-600 font-medium leading-relaxed">
+              We tailor our solutions to add value from day zero. We are a knowledge organization who believe in investing in our assets to ensure a top notch experience for our clients.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Vision & Mission */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

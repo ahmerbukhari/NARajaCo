@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2, ChevronRight, Users, Shield, Gauge, TrendingUp } from "lucide-react";
 import { services, industries } from "@/lib/data";
 import ServiceCard from "@/components/ServiceCard";
@@ -23,20 +24,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-              {/* Logo Replica */}
-              <div className="w-28 h-28 bg-white rounded-md border border-slate-100 shadow-md flex items-center justify-center mb-8 p-2">
-                <div className="w-full h-full rounded-full border-[3px] border-[#8B1C31] flex items-center justify-center relative">
-                  <div className="absolute inset-1 rounded-full border-[1.5px] border-[#8B1C31]"></div>
-                  <span className="text-5xl font-bold text-[#8B1C31] italic pr-1">N</span>
-                  {/* Small curved text simulation */}
-                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
-                    <path id="curve" d="M 20 80 A 40 40 0 0 0 80 80" fill="transparent" />
-                    <text className="text-[6px] fill-[#8B1C31] font-bold tracking-widest">
-                      <textPath href="#curve" startOffset="50%" textAnchor="middle">Naureen Akhtar Raja & Co</textPath>
-                    </text>
-                  </svg>
-                </div>
-              </div>
+              {/* Firm logo */}
+              <Image
+                src="/logo.png"
+                alt="Naureen Akhtar Raja & Co. logo"
+                width={144}
+                height={144}
+                priority
+                className="w-32 h-32 object-contain mb-8"
+              />
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#8B1C31] leading-[1.05] uppercase mb-6">
                 Naureen Akhtar<br/>Raja & Co.
