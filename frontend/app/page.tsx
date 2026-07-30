@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronRight, Users, Shield, Gauge, TrendingUp } from "lucide-react";
 import { services, industries } from "@/lib/data";
 import ServiceCard from "@/components/ServiceCard";
 import IndustryCard from "@/components/IndustryCard";
@@ -24,7 +24,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
               {/* Logo Replica */}
-              <div className="w-28 h-28 bg-white shadow-md flex items-center justify-center mb-8 p-2">
+              <div className="w-28 h-28 bg-white rounded-md border border-slate-100 shadow-md flex items-center justify-center mb-8 p-2">
                 <div className="w-full h-full rounded-full border-[3px] border-[#8B1C31] flex items-center justify-center relative">
                   <div className="absolute inset-1 rounded-full border-[1.5px] border-[#8B1C31]"></div>
                   <span className="text-5xl font-bold text-[#8B1C31] italic pr-1">N</span>
@@ -101,36 +101,56 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-                A Legacy of <span className="text-[#8B1C31]">Trust</span> and Professional Excellence.
+                Delivering <span className="text-[#8B1C31]">Value</span>, Not Just Compliance.
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed mb-6 font-medium">
-                For over two decades, Naureen Akhtar Raja & Co. has been the trusted advisor to leading corporations, private enterprises, and public institutions. We combine deep industry knowledge with technical expertise to deliver solutions that matter.
+                Naureen Akhtar Raja & Co. is a Chartered Accountancy firm registered with ICAP, providing Audit, Taxation, Advisory, Business Process Solutions, and Technology. We deliver value driven, reliable, and practical solutions that help businesses grow while ensuring compliance with local and international standards.
               </p>
               <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
-                Our commitment goes beyond compliance. We partner with our clients to navigate complex regulatory landscapes, optimize financial performance, and build resilient organizations prepared for the future.
+                Our mission is to empower our stakeholders through value driven business practices — raising the bar for professional services by making value-driven delivery the standard of quality, from inception through to the end of every engagement.
               </p>
               <Link href="/about" className="inline-flex items-center text-[#8B1C31] font-bold hover:text-[#6A1525] transition-colors group">
-                Discover our firm's history
+                More about our firm
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 text-center shadow-sm">
-                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">20+</div>
-                <div className="text-sm font-bold text-slate-600">Years of Excellence</div>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 text-center mt-8 shadow-sm">
-                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">500+</div>
-                <div className="text-sm font-bold text-slate-600">Clients Served</div>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 text-center shadow-sm">
-                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">9</div>
-                <div className="text-sm font-bold text-slate-600">Core Industries</div>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 text-center mt-8 shadow-sm">
-                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">100%</div>
-                <div className="text-sm font-bold text-slate-600">Commitment</div>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  icon: Users,
+                  title: "50+ seasoned professionals",
+                  description: "Specialized skillsets and subject-matter exposure gained at leading organizations."
+                },
+                {
+                  icon: Shield,
+                  title: "ICAP registered firm",
+                  description: "Audit and assurance delivered to local and international standards."
+                },
+                {
+                  icon: Gauge,
+                  title: "Timely, effective delivery",
+                  description: "High service quality, backed by accelerators that keep engagements on schedule."
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Value driven model",
+                  description: "Value realization from inception and high-yield service throughout the project."
+                }
+              ].map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={index}
+                    className="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="w-11 h-11 rounded-xl bg-[#8B1C31]/10 flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-[#8B1C31]" />
+                    </div>
+                    <h3 className="text-slate-900 font-bold mb-2">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed font-medium">{item.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
