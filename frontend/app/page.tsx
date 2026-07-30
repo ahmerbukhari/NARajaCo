@@ -31,7 +31,7 @@ export default function Home() {
                 width={144}
                 height={144}
                 priority
-                className="w-32 h-32 object-contain mb-8"
+                className="w-44 h-44 md:w-52 md:h-52 object-contain mb-8"
               />
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#8B1C31] leading-[1.05] uppercase mb-6">

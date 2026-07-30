@@ -43,7 +43,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <Image
             src="/logo.png"
             alt="Naureen Akhtar Raja & Co. logo"
