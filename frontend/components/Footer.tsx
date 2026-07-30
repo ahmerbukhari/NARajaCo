@@ -62,15 +62,31 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-white/90 shrink-0 mt-0.5" />
-                <span className="text-white/70 text-sm font-medium">123 Corporate Avenue, Business District, City, Country</span>
+                <span className="text-white/70 text-sm font-medium">
+                  Office # 19, 2nd Floor, Huzaifa Centre, I-8 Markaz, Islamabad.
+                </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-white/90 shrink-0" />
-                <span className="text-white/70 text-sm font-medium">+1 (555) 123-4567</span>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-white/90 shrink-0 mt-0.5" />
+                <span className="text-white/70 text-sm font-medium">
+                  Office # 202, Ground Floor, Niazi Plaza, Board Bazar, Peshawar.
+                </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-white/90 shrink-0" />
-                <span className="text-white/70 text-sm font-medium">contact@narco.com</span>
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-white/90 shrink-0 mt-0.5" />
+                <span className="text-white/70 text-sm font-medium">
+                  <a href="tel:+923425058621" className="hover:text-white transition-colors">+92 342 505 8621</a>
+                  <br />
+                  <a href="tel:+923455919859" className="hover:text-white transition-colors">+92 345 591 9859</a>
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-white/90 shrink-0 mt-0.5" />
+                <span className="text-white/70 text-sm font-medium break-all">
+                  <a href="mailto:naureen.akhtar1957@gmail.com" className="hover:text-white transition-colors">naureen.akhtar1957@gmail.com</a>
+                  <br />
+                  <a href="mailto:moeensatti6@gmail.com" className="hover:text-white transition-colors">moeensatti6@gmail.com</a>
+                </span>
               </li>
             </ul>
           </div>

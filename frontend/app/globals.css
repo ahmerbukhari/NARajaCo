@@ -120,3 +120,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Gentle fixed-distance float for hero cards. Tailwind's `bounce` translates by
+   a percentage of element height, which overshoots on tall cards. */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

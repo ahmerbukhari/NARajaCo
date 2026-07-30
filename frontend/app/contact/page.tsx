@@ -101,7 +101,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-red-800 font-bold">Submission Failed</h4>
                     <p className="text-red-700 text-sm mt-1 font-medium">
-                      Message could not be sent. Please email us directly at contact@narco.com
+                      Message could not be sent. Please email us directly at naureen.akhtar1957@gmail.com
                     </p>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                       id="user_phone"
                       name="user_phone" 
                       className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-[#8B1C31] focus:ring-1 focus:ring-[#8B1C31] transition-colors font-medium"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+92 300 000 0000"
                     />
                   </div>
                   <div className="space-y-2">
@@ -169,6 +169,7 @@ export default function ContactPage() {
                       <option key={s.id} value={s.name}>{s.name}</option>
                     ))}
                     <option value="General Inquiry">General Inquiry</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
@@ -207,9 +208,9 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Contact Info & Map */}
-          <div className="lg:col-span-2 flex flex-col gap-8">
-            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
+          {/* Contact Info */}
+          <div className="lg:col-span-2">
+            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm lg:sticky lg:top-32">
               <h3 className="text-xl font-extrabold text-slate-900 mb-6">Contact Information</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
@@ -217,11 +218,22 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-[#8B1C31]" />
                   </div>
                   <div>
-                    <h4 className="text-slate-900 font-bold mb-1">Head Office</h4>
+                    <h4 className="text-slate-900 font-bold mb-1">Islamabad Office</h4>
                     <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                      123 Corporate Avenue, Business District<br />
-                      City, State 12345<br />
-                      Country
+                      Office # 19, 2nd Floor, Huzaifa Centre,<br />
+                      I-8 Markaz, Islamabad.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#8B1C31]/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-[#8B1C31]" />
+                  </div>
+                  <div>
+                    <h4 className="text-slate-900 font-bold mb-1">Peshawar Office</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                      Office # 202, Ground Floor, Niazi Plaza,<br />
+                      Board Bazar, Peshawar.
                     </p>
                   </div>
                 </li>
@@ -232,8 +244,8 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-slate-900 font-bold mb-1">Phone</h4>
                     <p className="text-slate-600 text-sm font-medium">
-                      +1 (555) 123-4567<br />
-                      Mon-Fri, 9am-6pm
+                      <a href="tel:+923425058621" className="hover:text-[#8B1C31] transition-colors">+92 342 505 8621</a><br />
+                      <a href="tel:+923455919859" className="hover:text-[#8B1C31] transition-colors">+92 345 591 9859</a>
                     </p>
                   </div>
                 </li>
@@ -243,25 +255,13 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-slate-900 font-bold mb-1">Email</h4>
-                    <p className="text-slate-600 text-sm font-medium">
-                      contact@narco.com<br />
-                      support@narco.com
+                    <p className="text-slate-600 text-sm font-medium break-all">
+                      <a href="mailto:naureen.akhtar1957@gmail.com" className="hover:text-[#8B1C31] transition-colors">naureen.akhtar1957@gmail.com</a><br />
+                      <a href="mailto:moeensatti6@gmail.com" className="hover:text-[#8B1C31] transition-colors">moeensatti6@gmail.com</a>
                     </p>
                   </div>
                 </li>
               </ul>
-            </div>
-
-            {/* Map Placeholder */}
-            <div className="bg-slate-200 border border-slate-300 rounded-3xl overflow-hidden h-64 relative shadow-sm">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3151.835434509374!2d144.95373531590415!3d-37.817209742021234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sus!4v1611815408161!5m2!1sen!2sus" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy"
-              ></iframe>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Shield, Target, Users, Award, ArrowRight, Eye, Compass } from "lucide-react";
+import { Shield, Target, Users, Award, ArrowRight, Eye, Compass, CheckCircle2 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
@@ -32,30 +32,82 @@ export default function AboutPage() {
     }
   ];
 
+  const leaders = [
+    {
+      name: "Naureen Akhtar Raja",
+      role: "Managing Partner",
+      credentials: "ACA (ICAP)",
+      initials: "NR",
+      bio: [
+        "Naureen Akhtar Raja is a seasoned Chartered Accountant with over a decade of experience in audit, taxation, and advisory. Having served in leadership roles at EY Ford Rhodes and Deloitte Middle East, she brings unmatched expertise in financial reporting, compliance, and governance.",
+        "Her multi-sector exposure across telecom, IT, power generation, and NGOs positions her as a trusted advisor to both local and international clients. As Managing Partner, she drives the firm's vision of delivering excellence with integrity and client-focused solutions."
+      ]
+    },
+    {
+      name: "Moeen Javed Satti",
+      role: "Partner, Advisory Services",
+      credentials: "IPA & IFA (Australia)",
+      initials: "MS",
+      bio: [
+        "Moeen Javed Satti is a result-oriented finance leader with more than 12 years of experience in audit, advisory, and financial management. His career includes serving as CFO of a public listed company, where he successfully steered financial strategy, risk management, and operational efficiency.",
+        "With a strong foundation at PwC (A.F. Ferguson) and global memberships with IPA and IFA (Australia), Moeen combines technical expertise with practical leadership. He specializes in IFRS, financial analysis, and strategic finance, ensuring clients benefit from both strategic insight and operational excellence."
+      ]
+    },
+    {
+      name: "Shuja Rehman",
+      role: "Partner, Business Process Solutions",
+      credentials: "Oracle SCM & HCM, Coupa Core Implementation",
+      initials: "SR",
+      bio: [
+        "Shuja Rehman is an accomplished ERP and business process specialist with extensive experience in digitalization, automation and process improvement initiatives. His career spans leading roles at Deloitte Middle East, PwC (A.F. Ferguson), Telenor Group, and Tawal Telecom, where he spearheaded automation and process improvement initiatives for global clients.",
+        "Certified in Oracle SCM & HCM and Coupa Core Implementation, he has successfully delivered ERP solutions for industry leaders such as AstraZeneca, Tawal, Telenor and other key players in medicine and health, technology, FMCG and financial sectors. Shuja's expertise lies in bridging technology with business strategy, enabling organizations to achieve efficiency and sustainable growth."
+      ]
+    },
+    {
+      name: "Haroon Khan Marwat",
+      role: "Partner, Audit",
+      credentials: "SAP Certified",
+      initials: "HM",
+      bio: [
+        "Haroon Marwat brings decades of experience in audit and financial consulting, with a strong foundation in SAP-certified systems and international audit practices. His career spans roles with KPMG and Tophat Consulting, where he led complex audit engagements across sectors.",
+        "Currently serving as Finance Director for Seasons Environmental Consulting, Haroon combines strategic insight with hands-on expertise in governance, compliance, and financial controls. His leadership strengthens the firm's assurance capabilities and commitment to delivering transparent, high-impact audit solutions."
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white pb-24">
       {/* Hero Section - matching the homepage hero theme */}
       <PageHero
         aside={
-          <div className="bg-white border border-white/50 rounded-3xl p-8 md:p-12 shadow-2xl">
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">20+</div>
-                <div className="text-sm font-bold text-slate-600">Years of Experience</div>
-              </div>
-              <div>
-                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">500+</div>
-                <div className="text-sm font-bold text-slate-600">Clients Worldwide</div>
-              </div>
-              <div>
-                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">50+</div>
-                <div className="text-sm font-bold text-slate-600">Expert Professionals</div>
-              </div>
-              <div>
-                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">15+</div>
-                <div className="text-sm font-bold text-slate-600">Global Partners</div>
-              </div>
-            </div>
+          <div className="bg-white border border-white/50 rounded-3xl p-8 md:p-10 shadow-2xl lg:mt-12 animate-[float_6s_ease-in-out_infinite]">
+            <h2 className="text-2xl font-extrabold text-slate-900 mb-6 tracking-tight">
+              Why <span className="text-[#8B1C31]">NARCO</span>?
+            </h2>
+            <ul className="space-y-5">
+              {[
+                {
+                  title: "50+ seasoned professionals",
+                  description: "Specialized skillsets and subject-matter exposure gained at leading organizations."
+                },
+                {
+                  title: "Timely, effective delivery",
+                  description: "A commitment to high service quality, backed by accelerators that keep engagements on schedule."
+                },
+                {
+                  title: "Value driven business model",
+                  description: "Value realization from inception and high-yield service throughout the project timeline."
+                }
+              ].map((point, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#8B1C31] shrink-0 mt-0.5" />
+                  <div>
+                    <div className="text-slate-900 font-bold">{point.title}</div>
+                    <p className="text-slate-600 text-sm font-medium leading-relaxed mt-1">{point.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         }
       >
@@ -138,23 +190,33 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Naureen Akhtar Raja", role: "Managing Partner", desc: "Over 25 years of experience in corporate tax and strategic advisory." },
-              { name: "Tariq Mahmood", role: "Head of Audit", desc: "Specializes in complex financial audits for multinational corporations." },
-              { name: "Ayesha Khan", role: "Director of Consulting", desc: "Leads digital transformation and operational efficiency initiatives." }
-            ].map((leader, index) => (
-              <div key={index} className="group">
-                <div className="aspect-[4/5] rounded-2xl bg-slate-200 mb-6 overflow-hidden relative shadow-sm">
-                  {/* Placeholder for team member photo */}
-                  <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-bold">
-                    Photo
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {leaders.map((leader, index) => (
+              <div
+                key={index}
+                className="group bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-start gap-5 mb-6">
+                  <div className="w-16 h-16 shrink-0 rounded-2xl bg-[#8B1C31]/10 flex items-center justify-center">
+                    <span className="text-xl font-extrabold text-[#8B1C31]">{leader.initials}</span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60"></div>
+                  <div>
+                    <h3 className="text-xl font-extrabold text-slate-900 mb-1 group-hover:text-[#8B1C31] transition-colors">
+                      {leader.name}
+                    </h3>
+                    <div className="text-[#8B1C31] text-sm font-bold uppercase tracking-wide">{leader.role}</div>
+                    {leader.credentials ? (
+                      <div className="text-slate-500 text-sm font-bold mt-1">{leader.credentials}</div>
+                    ) : null}
+                  </div>
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900 mb-1 group-hover:text-[#8B1C31] transition-colors">{leader.name}</h3>
-                <div className="text-[#8B1C31] text-sm font-bold mb-3">{leader.role}</div>
-                <p className="text-slate-600 text-sm font-medium">{leader.desc}</p>
+                <div className="space-y-4">
+                  {leader.bio.map((paragraph, i) => (
+                    <p key={i} className="text-slate-600 text-sm leading-relaxed font-medium">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
