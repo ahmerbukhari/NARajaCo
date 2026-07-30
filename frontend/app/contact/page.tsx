@@ -3,6 +3,7 @@
 import React, { useState, useRef } from "react";
 import { MapPin, Phone, Mail, Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { services } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 
 export default function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -62,22 +63,22 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8B1C31]/10 border border-[#8B1C31]/20 w-fit mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#8B1C31]"></span>
-            <span className="text-sm font-bold text-[#8B1C31]">Get in Touch</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            Let's Discuss Your <span className="text-[#8B1C31]">Business Needs</span>.
-          </h1>
-          <p className="text-xl text-slate-600 font-medium leading-relaxed">
-            Reach out to our team of experts to explore how we can support your organization's growth, compliance, and strategic objectives.
-          </p>
+    <div className="min-h-screen bg-slate-50 pb-24">
+      {/* Header - matching the homepage hero theme */}
+      <PageHero>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-[#8B1C31]/20 w-fit mb-6">
+          <span className="w-2 h-2 rounded-full bg-[#8B1C31]"></span>
+          <span className="text-sm font-bold text-[#8B1C31]">Get in Touch</span>
         </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#8B1C31] mb-6 tracking-tight leading-[1.1]">
+          Let&apos;s Discuss Your Business Needs.
+        </h1>
+        <p className="text-lg text-slate-700 font-medium leading-relaxed">
+          Reach out to our team of experts to explore how we can support your organization&apos;s growth, compliance, and strategic objectives.
+        </p>
+      </PageHero>
 
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
           {/* Contact Form */}
           <div className="lg:col-span-3">

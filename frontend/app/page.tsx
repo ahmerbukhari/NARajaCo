@@ -17,8 +17,8 @@ export default function Home() {
       {/* Hero Section - Matching the provided design exactly */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#EAECEF]">
         {/* Diagonal Shape Background */}
-        <div className="absolute top-0 right-0 bottom-0 w-[80%] md:w-[60%] bg-[#8B1C31] transform skew-x-[-15deg] translate-x-[20%] origin-bottom-right shadow-2xl z-0"></div>
-        <div className="absolute top-0 right-0 bottom-0 w-[80%] md:w-[55%] bg-[#6A1525] transform skew-x-[-15deg] translate-x-[25%] origin-bottom-right z-0 opacity-50"></div>
+        <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[52%] bg-[#8B1C31] transform skew-x-[-15deg] translate-x-[20%] origin-bottom-right shadow-2xl z-0"></div>
+        <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[48%] bg-[#6A1525] transform skew-x-[-15deg] translate-x-[25%] origin-bottom-right z-0 opacity-50"></div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Shield, Target, Users, Award, CheckCircle2, ArrowRight } from "lucide-react";
+import { Shield, Target, Users, Award, ArrowRight, Eye, Compass } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 export const metadata = {
   title: "About Us | Naureen Akhtar Raja & Co.",
@@ -32,47 +33,70 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-24">
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 md:px-8 mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8B1C31]/10 border border-[#8B1C31]/20 w-fit mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#8B1C31]"></span>
-              <span className="text-sm font-bold text-[#8B1C31]">Our Story</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
-              Building <span className="text-[#8B1C31]">Trust</span> Through Excellence.
-            </h1>
-            <p className="text-xl text-slate-600 font-medium leading-relaxed mb-6">
-              Naureen Akhtar Raja & Co. is a Chartered Accountancy firm registered with ICAP, providing Audit, Taxation, Advisory, Business Process Solutions, and Technology.
-            </p>
-            <p className="text-lg text-slate-600 font-medium leading-relaxed">
-              We are committed to delivering value driven, reliable, and practical solutions to help businesses grow while ensuring compliance with local and international standards.
-            </p>
-          </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-[#8B1C31]/10 rounded-3xl blur-2xl"></div>
-            <div className="relative bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 shadow-xl">
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">20+</div>
-                  <div className="text-sm font-bold text-slate-600">Years of Experience</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">500+</div>
-                  <div className="text-sm font-bold text-slate-600">Clients Worldwide</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">50+</div>
-                  <div className="text-sm font-bold text-slate-600">Expert Professionals</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">15+</div>
-                  <div className="text-sm font-bold text-slate-600">Global Partners</div>
-                </div>
+    <div className="min-h-screen bg-white pb-24">
+      {/* Hero Section - matching the homepage hero theme */}
+      <PageHero
+        aside={
+          <div className="bg-white border border-white/50 rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div className="grid grid-cols-2 gap-8">
+              <div>
+                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">20+</div>
+                <div className="text-sm font-bold text-slate-600">Years of Experience</div>
+              </div>
+              <div>
+                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">500+</div>
+                <div className="text-sm font-bold text-slate-600">Clients Worldwide</div>
+              </div>
+              <div>
+                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">50+</div>
+                <div className="text-sm font-bold text-slate-600">Expert Professionals</div>
+              </div>
+              <div>
+                <div className="text-4xl font-extrabold text-[#8B1C31] mb-2">15+</div>
+                <div className="text-sm font-bold text-slate-600">Global Partners</div>
               </div>
             </div>
+          </div>
+        }
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-[#8B1C31]/20 w-fit mb-6">
+          <span className="w-2 h-2 rounded-full bg-[#8B1C31]"></span>
+          <span className="text-sm font-bold text-[#8B1C31]">Our Story</span>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#8B1C31] mb-6 tracking-tight leading-[1.1]">
+          Building Trust Through Excellence.
+        </h1>
+        <p className="text-lg text-slate-700 font-medium leading-relaxed mb-6">
+          Naureen Akhtar Raja & Co. is a Chartered Accountancy firm registered with ICAP, providing Audit, Taxation, Advisory, Business Process Solutions, and Technology.
+        </p>
+        <p className="text-base text-slate-700 font-medium leading-relaxed">
+          We are committed to delivering value driven, reliable, and practical solutions to help businesses grow while ensuring compliance with local and international standards.
+        </p>
+      </PageHero>
+
+      {/* Vision & Mission */}
+      <div className="max-w-7xl mx-auto px-6 md:px-8 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
+            <div className="w-12 h-12 rounded-xl bg-[#8B1C31]/10 flex items-center justify-center mb-6">
+              <Eye className="w-6 h-6 text-[#8B1C31]" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">Our Vision</h2>
+            <p className="text-lg text-slate-600 font-medium leading-relaxed">
+              To raise the bar for professional services by making value-driven delivery the standard of quality. We empower clients, teams, and shareholders through impactful, transparent, and value for every stakeholder.
+            </p>
+          </div>
+          <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
+            <div className="w-12 h-12 rounded-xl bg-[#8B1C31]/10 flex items-center justify-center mb-6">
+              <Compass className="w-6 h-6 text-[#8B1C31]" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">Our Mission</h2>
+            <p className="text-lg text-slate-600 font-medium leading-relaxed mb-4">
+              Our mission is to empower our stakeholders through value driven business practices.
+            </p>
+            <p className="text-lg text-slate-600 font-medium leading-relaxed">
+              Exercise a working model that fosters skillset and client focus via innovative methodologies and continuous improvement.
+            </p>
           </div>
         </div>
       </div>
@@ -100,43 +124,6 @@ export default function AboutPage() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </div>
-
-      {/* Credentials & Affiliations */}
-      <div className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Credentials & Affiliations</h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
-                We are proud to be recognized by leading professional bodies and regulatory authorities. Our credentials reflect our unwavering commitment to quality, compliance, and continuous professional development.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Institute of Chartered Accountants",
-                  "Public Company Accounting Oversight Board (PCAOB)",
-                  "International Federation of Accountants (IFAC)",
-                  "Certified Public Accountants Association"
-                ].map((credential, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#8B1C31] shrink-0" />
-                    <span className="text-slate-700 font-bold">{credential}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="aspect-square rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center p-8 grayscale hover:grayscale-0 transition-all duration-500 shadow-sm">
-                  {/* Placeholder for credential logos */}
-                  <div className="text-slate-400 font-bold text-xl text-center">
-                    Credential<br/>Logo {i}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
