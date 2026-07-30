@@ -51,10 +51,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6">Top Services</h3>
             <ul className="flex flex-col gap-3">
-              <li><Link href="/services/tax-and-legal" className="text-white/70 hover:text-white text-sm transition-colors font-medium">Tax & Legal</Link></li>
-              <li><Link href="/services/audit-and-assurance" className="text-white/70 hover:text-white text-sm transition-colors font-medium">Audit & Assurance</Link></li>
-              <li><Link href="/services/consulting" className="text-white/70 hover:text-white text-sm transition-colors font-medium">Consulting</Link></li>
-              <li><Link href="/services/financial-management" className="text-white/70 hover:text-white text-sm transition-colors font-medium">Financial Management</Link></li>
+              <li><Link href="/services/external-audits" className="text-white/70 hover:text-white text-sm transition-colors font-medium">External Audits</Link></li>
+              <li><Link href="/services/internal-audit" className="text-white/70 hover:text-white text-sm transition-colors font-medium">Internal Audit</Link></li>
+              <li><Link href="/services/tax-advisory" className="text-white/70 hover:text-white text-sm transition-colors font-medium">Tax Advisory</Link></li>
+              <li><Link href="/services/accounting-and-bookkeeping" className="text-white/70 hover:text-white text-sm transition-colors font-medium">Accounting & Bookkeeping</Link></li>
             </ul>
           </div>
 

@@ -44,8 +44,9 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           {service.name}
         </h1>
 
+        {/* Two-line summary; the full write-up sits below the hero */}
         <p className="text-lg text-slate-700 font-medium leading-relaxed">
-          {service.fullDescription}
+          {service.shortDescription}
         </p>
       </PageHero>
 
@@ -53,13 +54,26 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           {/* Main Content */}
           <div className="lg:col-span-2">
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                How we help
+              </h2>
+              <div className="space-y-5">
+                {service.fullDescription.map((paragraph, i) => (
+                  <p key={i} className="text-lg text-slate-600 font-medium leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 mb-12 shadow-sm">
               <h3 className="text-2xl font-extrabold text-slate-900 mb-6">Key Offerings</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
+                {service.keyOfferings.map((offering, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#8B1C31] shrink-0 mt-0.5" />
-                    <span className="text-slate-700 font-medium">Strategic advisory and implementation support</span>
+                    <span className="text-slate-700 font-medium">{offering}</span>
                   </li>
                 ))}
               </ul>

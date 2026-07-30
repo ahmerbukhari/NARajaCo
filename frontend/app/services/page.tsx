@@ -21,7 +21,7 @@ export default function ServicesPage() {
           Comprehensive Services for Modern Business.
         </h1>
         <p className="text-lg text-slate-700 font-medium leading-relaxed">
-          From rigorous audit and assurance to strategic consulting and digital transformation, our multidisciplinary teams deliver solutions that drive sustainable value.
+          NARCO partners with clients to generate long-term value for all stakeholders, integrating Environmental, Social, and Governance (ESG) principles. Leveraging data and technology, our services and solutions build trust through assurance, enabling clients to transform, grow, and operate sustainably.
         </p>
       </PageHero>
 
