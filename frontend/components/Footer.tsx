@@ -14,9 +14,9 @@ export default function Footer() {
               <Image
                 src="/logo-white.png"
                 alt="Naureen Akhtar Raja & Co. logo"
-                width={44}
-                height={44}
-                className="w-11 h-11 object-contain"
+                width={1093}
+                height={1069}
+                className="w-11 h-auto"
               />
               <div className="flex flex-col">
                 <span className="text-white font-bold text-lg leading-tight tracking-tight">Naureen Akhtar</span>

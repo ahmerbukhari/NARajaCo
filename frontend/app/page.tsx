@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Matching the provided design exactly */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#EAECEF]">
+      <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-[#EAECEF]">
         {/* Diagonal Shape Background */}
         <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[52%] bg-[#8B1C31] transform skew-x-[-15deg] translate-x-[20%] origin-bottom-right shadow-2xl z-0"></div>
         <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[48%] bg-[#6A1525] transform skew-x-[-15deg] translate-x-[25%] origin-bottom-right z-0 opacity-50"></div>
@@ -28,14 +28,15 @@ export default function Home() {
               <Image
                 src="/logo.png"
                 alt="Naureen Akhtar Raja & Co. logo"
-                width={144}
-                height={144}
+                width={1093}
+                height={1069}
                 priority
-                className="w-44 h-44 md:w-52 md:h-52 object-contain mb-8"
+                className="w-44 md:w-52 h-auto mb-8"
               />
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#8B1C31] leading-[1.05] uppercase mb-6">
-                Naureen Akhtar<br/>Raja & Co.
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#8B1C31] leading-[1.05] uppercase mb-6">
+                <span className="block whitespace-nowrap">Naureen Akhtar</span>
+                <span className="block">Raja &amp; Co.</span>
               </h1>
 
               <p className="text-xl md:text-2xl text-[#8B1C31] font-bold mb-10">

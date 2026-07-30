@@ -47,10 +47,10 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Naureen Akhtar Raja & Co. logo"
-            width={44}
-            height={44}
+            width={1093}
+            height={1069}
             priority
-            className="w-10 h-10 object-contain"
+            className="w-10 h-auto"
           />
           <div className="flex flex-col">
             <span className="font-bold text-lg leading-tight tracking-tight text-[#8B1C31]">Naureen Akhtar</span>
