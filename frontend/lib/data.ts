@@ -206,8 +206,19 @@ export const industries = [
     id: "advanced-manufacturing",
     name: "Advanced Manufacturing & Mobility",
     slug: "advanced-manufacturing",
-    shortDescription: "Solutions for modern manufacturing, automotive, and transportation sectors.",
-    fullDescription: "The manufacturing and mobility sectors are undergoing rapid transformation driven by automation and shifting supply chains. We provide strategic guidance on operational efficiency, digital integration, and regulatory compliance to help you stay ahead of the curve.",
+    shortDescription: "Transforming industries through smart, sustainable innovation.",
+    fullDescription: [
+      "NARCO partners with manufacturing and mobility leaders to navigate the complexities of Industry 4.0, digital transformation, and sustainable operations. From industrial automation to supply chain re-engineering, our services are designed to future-proof operations while reducing inefficiencies and costs.",
+      "Our end-to-end solutions enable manufacturers to enhance productivity, boost innovation, and stay competitive in a rapidly evolving global ecosystem."
+    ],
+    capabilitiesIntro: "We support clients across automotive, aerospace, logistics, and high-tech sectors to:",
+    capabilities: [
+      "Implement digital manufacturing frameworks and smart factory models",
+      "Streamline operations with process improvement and lean methodologies",
+      "Optimize supply chain networks through data-driven insights",
+      "Develop ESG-compliant manufacturing strategies",
+      "Manage regulatory compliance across geographies"
+    ],
     icon: Factory,
     relatedServices: ["digital-transformation", "governance", "external-audits"]
   },
@@ -215,8 +226,19 @@ export const industries = [
     id: "consumer-retail",
     name: "Consumer & Retail",
     slug: "consumer-retail",
-    shortDescription: "Navigating changing consumer behaviors and retail landscape transformations.",
-    fullDescription: "In a rapidly evolving retail environment, understanding consumer behavior is critical. We help consumer brands and retailers optimize their supply chains, enhance customer experiences, and navigate complex tax and regulatory requirements.",
+    shortDescription: "Enabling customer-centric growth in a rapidly evolving market.",
+    fullDescription: [
+      "NARCO supports consumer-facing brands and retailers in responding to fast-changing market dynamics, evolving customer behaviors, and digital disruption. We provide strategic insights and operational support to help businesses enhance customer engagement, streamline supply chains, and adopt agile retail models.",
+      "Whether it's adapting to e-commerce growth, sustainability expectations, or emerging technologies, we enable consumer businesses to stay ahead of the curve and build resilient, value-driven models."
+    ],
+    capabilitiesIntro: "Our services include:",
+    capabilities: [
+      "Customer journey transformation and personalization strategies",
+      "Omnichannel retail planning and digital enablement",
+      "Inventory and demand planning optimization",
+      "Pricing, promotion, and merchandising analytics",
+      "Risk mitigation, compliance, and operational controls"
+    ],
     icon: ShoppingCart,
     relatedServices: ["tax-advisory", "people-and-workforce", "accounting-and-bookkeeping"]
   },
@@ -224,8 +246,19 @@ export const industries = [
     id: "energy-resources",
     name: "Energy & Resources",
     slug: "energy-resources",
-    shortDescription: "Strategic advisory for energy transition, utilities, and natural resources.",
-    fullDescription: "The energy sector faces unprecedented challenges and opportunities in the transition to sustainability. We offer specialized advisory in ESG compliance, operational optimization, and financial management for energy and resource companies.",
+    shortDescription: "Powering transitions with operational excellence and ESG foresight.",
+    fullDescription: [
+      "NARCO partners with energy producers, utilities, and resource-based enterprises to navigate the global transition toward cleaner, smarter, and more efficient operations. Our solutions are designed to help clients balance energy security with environmental responsibility while unlocking new sources of value.",
+      "From upstream exploration to grid modernization and sustainable resource management, NARCO equips clients with the tools and insights to lead the future of energy."
+    ],
+    capabilitiesIntro: "We assist clients across conventional and renewable sectors to:",
+    capabilities: [
+      "Drive energy transition and decarbonization strategies",
+      "Improve asset performance and lifecycle management",
+      "Strengthen governance, risk, and regulatory compliance",
+      "Deploy digital technologies for real-time operations and analytics",
+      "Enhance ESG reporting and stakeholder transparency"
+    ],
     icon: Zap,
     relatedServices: ["governance", "financial-planning-and-analysis", "internal-audit"]
   },
@@ -233,8 +266,19 @@ export const industries = [
     id: "financial-services",
     name: "Financial Services",
     slug: "financial-services",
-    shortDescription: "Comprehensive support for banking, insurance, and asset management firms.",
-    fullDescription: "Financial institutions operate in a highly regulated and competitive environment. Our deep industry expertise helps banks, insurers, and asset managers navigate regulatory changes, manage risk, and drive digital innovation.",
+    shortDescription: "Building agile, compliant, and tech-enabled financial futures.",
+    fullDescription: [
+      "NARCO works with banks, insurance providers, fintechs, and capital markets players to address the evolving demands of the financial sector. We help institutions navigate regulatory complexities, adopt transformative technologies, and build resilient, customer-centric models.",
+      "In an environment shaped by innovation, competition, and scrutiny, NARCO enables financial institutions to remain agile, compliant, and growth-focused."
+    ],
+    capabilitiesIntro: "Our expertise supports clients in:",
+    capabilities: [
+      "Regulatory compliance, risk management, and internal controls",
+      "Digital banking strategy and core system transformation",
+      "Customer experience redesign and personalization",
+      "Operational efficiency and cost optimization",
+      "Cybersecurity, data governance, and fraud prevention"
+    ],
     icon: Landmark,
     relatedServices: ["external-audits", "tax-advisory", "governance"]
   },
@@ -242,8 +286,19 @@ export const industries = [
     id: "government-infrastructure",
     name: "Government & Infrastructure",
     slug: "government-infrastructure",
-    shortDescription: "Public sector consulting and large-scale infrastructure project advisory.",
-    fullDescription: "We partner with government entities and infrastructure developers to deliver public value. Our services include project finance advisory, operational efficiency consulting, and rigorous audit services for public sector organizations.",
+    shortDescription: "Strengthening institutions, modernizing services, building impact.",
+    fullDescription: [
+      "NARCO collaborates with government bodies, public institutions, and infrastructure developers to improve service delivery, enhance governance, and enable large-scale infrastructure transformation. Our solutions are grounded in transparency, efficiency, and citizen-centered outcomes.",
+      "Whether modernizing public systems or managing complex infrastructure programs, NARCO empowers governments to deliver sustainable and inclusive development."
+    ],
+    capabilitiesIntro: "We support the public sector in:",
+    capabilities: [
+      "Institutional capacity building and policy implementation",
+      "Digital governance, automation, and e-service frameworks",
+      "Infrastructure planning, project appraisal, and execution oversight",
+      "Public-private partnership (PPP) strategy and risk management",
+      "Fiscal governance, budgeting, and performance monitoring"
+    ],
     icon: Building2,
     relatedServices: ["shared-services", "external-audits", "financial-planning-and-analysis"]
   },
@@ -251,8 +306,19 @@ export const industries = [
     id: "life-sciences",
     name: "Life Sciences & Health Care",
     slug: "life-sciences",
-    shortDescription: "Navigating healthcare regulations, pharmaceuticals, and medical technology.",
-    fullDescription: "The healthcare and life sciences sectors require specialized knowledge to navigate complex regulations and rapid innovation. We provide strategic, financial, and operational advisory to healthcare providers, pharma, and medtech companies.",
+    shortDescription: "Driving innovation and patient-centered value in a regulated world.",
+    fullDescription: [
+      "NARCO partners with pharmaceutical companies, biotech firms, healthcare providers, and public health institutions to navigate regulatory landscapes, embrace digital health innovations, and optimize clinical and operational performance.",
+      "In a sector where precision, trust, and agility are paramount, NARCO enables organizations to advance medical innovation while delivering better patient outcomes and maintaining regulatory excellence."
+    ],
+    capabilitiesIntro: "Our services are designed to support:",
+    capabilities: [
+      "Regulatory strategy and compliance with health authorities",
+      "Clinical operations optimization and R&D transformation",
+      "Patient-centric care models and digital health integration",
+      "Cost efficiency in hospital and healthcare administration",
+      "Supply chain management for medical products and devices"
+    ],
     icon: Stethoscope,
     relatedServices: ["internal-audit", "people-and-workforce", "accounting-and-bookkeeping"]
   },
@@ -260,8 +326,19 @@ export const industries = [
     id: "private-equity",
     name: "Private Equity",
     slug: "private-equity",
-    shortDescription: "End-to-end advisory for PE firms, from due diligence to portfolio optimization.",
-    fullDescription: "We support private equity firms throughout the investment lifecycle. From pre-deal due diligence and valuation to post-deal integration and portfolio company optimization, we help maximize returns and manage risk.",
+    shortDescription: "Strategic insights to maximize value across the deal lifecycle.",
+    fullDescription: [
+      "NARCO partners with private equity firms to support value creation at every stage — from due diligence to operational transformation and exit readiness. With a sharp focus on strategic alignment and measurable performance, we help PE investors navigate complexity, mitigate risk, and accelerate returns.",
+      "Whether backing growth, restructuring distressed assets, or preparing for a successful exit, NARCO delivers actionable insights to optimize investment outcomes."
+    ],
+    capabilitiesIntro: "We support firms in:",
+    capabilities: [
+      "Commercial, operational, and financial due diligence",
+      "Post-deal integration and performance improvement",
+      "Strategic cost transformation and value enhancement",
+      "Portfolio company governance and reporting frameworks",
+      "Exit planning, divestiture support, and IPO readiness"
+    ],
     icon: PieChart,
     relatedServices: ["governance", "financial-planning-and-analysis", "tax-advisory"]
   },
@@ -269,8 +346,19 @@ export const industries = [
     id: "technology",
     name: "Technology & Telecommunication",
     slug: "technology",
-    shortDescription: "Driving growth and innovation for tech companies and telecom providers.",
-    fullDescription: "In the fast-paced tech and telecom sectors, agility is key. We help technology companies scale operations, manage complex tax structures, and leverage data analytics to drive sustainable growth and innovation.",
+    shortDescription: "Scaling innovation while securing tomorrow's digital world.",
+    fullDescription: [
+      "NARCO empowers technology and telecom companies to innovate at scale, navigate disruption, and lead in a hyper-connected digital economy. We help clients transform operating models, strengthen cybersecurity, and unlock growth through data, AI, and emerging technologies.",
+      "In a landscape where speed and trust define success, NARCO enables tech and telecom leaders to operate with confidence and stay ahead of the curve."
+    ],
+    capabilitiesIntro: "Our support spans:",
+    capabilities: [
+      "Technology strategy, product development, and go-to-market execution",
+      "Cloud transformation, infrastructure modernization, and platform scalability",
+      "Cybersecurity, data privacy, and compliance frameworks",
+      "Customer experience innovation and digital service delivery",
+      "M&A strategy, post-merger integration, and global expansion planning"
+    ],
     icon: MonitorSmartphone,
     relatedServices: ["digital-transformation", "shared-services", "internal-audit"]
   },
@@ -278,10 +366,22 @@ export const industries = [
     id: "media-entertainment",
     name: "Media & Entertainment",
     slug: "media-entertainment",
-    shortDescription: "Strategic guidance for media, gaming, and entertainment organizations.",
-    fullDescription: "The media landscape is constantly shifting with new digital platforms and consumer habits. We provide strategic advisory, workforce planning, and digital transformation services to help media and entertainment companies thrive.",
+    shortDescription: "Monetizing content, engaging audiences, future-proofing media.",
+    fullDescription: [
+      "NARCO supports media houses, broadcasters, publishers, and digital content creators in transforming how content is created, delivered, and monetized. We bring strategic clarity and operational efficiency to an industry defined by constant evolution, shifting consumer behaviors, and digital disruption.",
+      "From traditional media to emerging digital platforms, NARCO empowers entertainment businesses to stay relevant, scalable, and profitable in a rapidly changing ecosystem."
+    ],
+    capabilitiesIntro: "We offer solutions in:",
+    capabilities: [
+      "Content strategy, audience engagement, and platform optimization",
+      "Revenue diversification through data-driven monetization models",
+      "Intellectual property management and rights optimization",
+      "Digital transformation of production and distribution workflows",
+      "Compliance, risk management, and brand reputation support"
+    ],
     icon: Film,
     relatedServices: ["digital-transformation", "accounting-and-bookkeeping", "people-and-workforce"]
   }
+
 ];
 
