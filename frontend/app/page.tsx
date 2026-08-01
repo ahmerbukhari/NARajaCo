@@ -16,14 +16,20 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Matching the provided design exactly */}
-      <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-[#EAECEF]">
-        {/* Diagonal Shape Background */}
+      <section className="relative min-h-screen flex items-center pt-28 pb-48 lg:pb-20 overflow-hidden bg-[#EAECEF]">
+        {/* Diagonal Shape Background - desktop */}
         <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[52%] bg-[#8B1C31] transform skew-x-[-15deg] translate-x-[20%] origin-bottom-right shadow-2xl z-0"></div>
         <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[48%] bg-[#6A1525] transform skew-x-[-15deg] translate-x-[25%] origin-bottom-right z-0 opacity-50"></div>
 
+        {/* Burgundy treatment for mobile/tablet: an angled band below the copy,
+            plus a corner wedge - both kept clear of the text column. */}
+        <div className="lg:hidden absolute bottom-0 left-0 right-0 h-40 bg-[#8B1C31] z-0 [clip-path:polygon(0_62%,100%_0,100%_100%,0_100%)]"></div>
+        <div className="lg:hidden absolute bottom-0 left-0 right-0 h-40 bg-[#6A1525] opacity-50 z-0 [clip-path:polygon(0_92%,100%_34%,100%_100%,0_100%)]"></div>
+        <div className="lg:hidden absolute -top-16 -right-16 w-56 h-56 bg-[#8B1C31] opacity-[0.08] skew-x-[-15deg] z-0"></div>
+
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 animate-in fade-in slide-in-from-bottom-8 duration-1000">
               {/* Firm logo */}
               <Image
                 src="/logo.png"
@@ -34,9 +40,8 @@ export default function Home() {
                 className="w-44 md:w-52 h-auto mb-8"
               />
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#8B1C31] leading-[1.05] uppercase mb-6">
-                <span className="block whitespace-nowrap">Naureen Akhtar</span>
-                <span className="block">Raja &amp; Co.</span>
+              <h1 className="text-xl sm:text-2xl md:text-[34px] lg:text-[30px] xl:text-[45px] font-extrabold tracking-tight text-[#8B1C31] leading-[1.15] uppercase whitespace-nowrap mb-1">
+                Naureen Akhtar Raja &amp; Co.
               </h1>
 
               <p className="text-xl md:text-2xl text-[#8B1C31] font-bold mb-10">
@@ -59,7 +64,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative hidden lg:block animate-in fade-in zoom-in-95 duration-1000 delay-200">
+            <div className="relative hidden lg:block lg:col-span-5 animate-in fade-in zoom-in-95 duration-1000 delay-200">
               {/* Abstract 3D-like composition */}
               <div className="relative w-full aspect-square max-w-lg mx-auto">
                 {/* Glass Cards Floating */}

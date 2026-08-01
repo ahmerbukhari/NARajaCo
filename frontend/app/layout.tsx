@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Naureen Akhtar Raja & Co. | Chartered Accountancy",
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col`}>
+      <body className={`${inter.className} ${inter.variable} bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col`}>
         <Script id="route-tracking" strategy="afterInteractive">
           {`
 (function() {

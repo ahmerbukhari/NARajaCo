@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { services, industries } from "@/lib/data";
 
 export default function Navbar() {
@@ -26,6 +26,21 @@ export default function Navbar() {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
   }, [pathname]);
+
+  // Lock body scroll and allow Escape to close while the panel is open
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -52,9 +67,10 @@ export default function Navbar() {
             priority
             className="w-10 h-auto"
           />
-          <div className="flex flex-col">
-            <span className="font-bold text-lg leading-tight tracking-tight text-[#8B1C31]">Naureen Akhtar</span>
-            <span className="text-xs font-semibold tracking-widest uppercase text-[#8B1C31]">Raja & Co.</span>
+          <div className="flex flex-col min-w-0">
+            <span className="font-bold text-base sm:text-lg leading-tight tracking-tight text-[#8B1C31] whitespace-nowrap">Naureen Akhtar Raja &amp; Co.</span>
+            <span className="hidden sm:block text-xs font-semibold tracking-widest uppercase text-[#8B1C31]">Chartered Accountants · ICAP Registered</span>
+            <span className="sm:hidden text-[10px] font-semibold tracking-widest uppercase text-[#8B1C31]">Chartered Accountants</span>
           </div>
         </Link>
 
@@ -117,62 +133,150 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle - morphing hamburger */}
         <button
-          className={`lg:hidden p-2 ${isScrolled ? 'text-slate-900' : 'text-[#8B1C31] bg-white/90 backdrop-blur-md rounded-full shadow-sm'}`}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
+          className={`lg:hidden relative z-[60] w-11 h-11 flex items-center justify-center rounded-full transition-all duration-300 active:scale-90 ${
+            mobileMenuOpen
+              ? 'bg-[#8B1C31] text-white shadow-lg'
+              : isScrolled
+                ? 'text-[#8B1C31]'
+                : 'text-[#8B1C31] bg-white/90 backdrop-blur-md shadow-sm'
+          }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <span className="relative block w-5 h-4">
+            <span className={`absolute left-0 h-[2px] w-full bg-current rounded-full transition-all duration-300 ${mobileMenuOpen ? 'top-[7px] rotate-45' : 'top-0'}`}></span>
+            <span className={`absolute left-0 top-[7px] h-[2px] w-full bg-current rounded-full transition-all duration-200 ${mobileMenuOpen ? 'opacity-0 scale-x-0' : 'opacity-100'}`}></span>
+            <span className={`absolute left-0 h-[2px] w-full bg-current rounded-full transition-all duration-300 ${mobileMenuOpen ? 'top-[7px] -rotate-45' : 'top-[14px]'}`}></span>
+          </span>
         </button>
       </div>
 
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 overflow-hidden animate-in slide-in-from-top-2 duration-200 shadow-lg">
-          <div className="px-6 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <div key={link.name} className="flex flex-col">
+      {/* Mobile Navigation - slide-in panel */}
+      <div
+        className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
+          mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+
+        {/* Panel */}
+        <div
+          className={`absolute top-0 right-0 h-full w-[86%] max-w-sm bg-white shadow-2xl flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          {/* Burgundy header with the diagonal motif */}
+          <div className="relative overflow-hidden bg-[#8B1C31] px-6 pt-8 pb-10 shrink-0">
+            <div className="absolute -top-10 -right-16 w-56 h-56 bg-[#6A1525] opacity-60 skew-x-[-15deg]"></div>
+            <div className="relative flex items-center gap-3 pr-12">
+              <Image src="/logo-white.png" alt="" width={1093} height={1069} className="w-10 h-auto" />
+              <div className="flex flex-col">
+                <span className="text-white font-bold leading-tight text-[15px]">Naureen Akhtar Raja &amp; Co.</span>
+                <span className="text-white/70 text-[10px] font-semibold tracking-widest uppercase">
+                  Chartered Accountants
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-6">
+            {navLinks.map((link, i) => (
+              <div
+                key={link.name}
+                className="border-b border-slate-100 last:border-0"
+                style={{
+                  transition: 'opacity 400ms ease, transform 400ms ease',
+                  transitionDelay: mobileMenuOpen ? `${120 + i * 60}ms` : '0ms',
+                  opacity: mobileMenuOpen ? 1 : 0,
+                  transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(24px)',
+                }}
+              >
                 <div className="flex items-center justify-between">
                   <Link
                     href={link.href}
-                    className={`text-lg font-bold ${
-                      pathname === link.href ? "text-[#8B1C31]" : "text-slate-900"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex-1 py-4 text-lg font-bold transition-colors ${
+                      pathname === link.href ? 'text-[#8B1C31]' : 'text-slate-900 hover:text-[#8B1C31]'
                     }`}
                   >
                     {link.name}
                   </Link>
                   {link.hasDropdown && (
                     <button
+                      aria-label={`Toggle ${link.name} submenu`}
                       onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                      className="p-2 text-slate-500"
+                      className={`w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 ${
+                        activeDropdown === link.name ? 'bg-[#8B1C31] text-white rotate-180' : 'bg-slate-100 text-slate-500'
+                      }`}
                     >
-                      <ChevronDown className={`w-5 h-5 transition-transform ${activeDropdown === link.name ? "rotate-180" : ""}`} />
+                      <ChevronDown className="w-5 h-5" />
                     </button>
                   )}
                 </div>
-                
-                {/* Mobile Dropdown */}
-                {link.hasDropdown && activeDropdown === link.name && (
-                  <div className="flex flex-col gap-3 pl-4 mt-3 border-l-2 border-slate-100 animate-in slide-in-from-top-2 duration-200">
-                    {link.items?.map((item) => (
-                      <Link
-                        key={item.slug}
-                        href={`${link.href}/${item.slug}`}
-                        className="text-sm font-medium text-slate-600 hover:text-[#8B1C31] transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                    <Link href={link.href} className="text-sm font-bold text-[#8B1C31] mt-2">
-                      View all {link.name.toLowerCase()} &rarr;
-                    </Link>
+
+                {/* Accordion submenu */}
+                {link.hasDropdown && (
+                  <div
+                    className={`grid transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                      activeDropdown === link.name ? 'grid-rows-[1fr] opacity-100 pb-4' : 'grid-rows-[0fr] opacity-0'
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="flex flex-col gap-1 pl-3 border-l-2 border-[#8B1C31]/20">
+                        {link.items?.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <Link
+                              key={item.slug}
+                              href={`${link.href}/${item.slug}`}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-3 py-2.5 px-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-[#8B1C31]/5 hover:text-[#8B1C31] active:scale-[0.98] transition-all"
+                            >
+                              <span className="w-7 h-7 rounded-lg bg-[#8B1C31]/10 text-[#8B1C31] flex items-center justify-center shrink-0">
+                                <Icon className="w-3.5 h-3.5" />
+                              </span>
+                              {item.name}
+                            </Link>
+                          );
+                        })}
+                        <Link
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="text-sm font-bold text-[#8B1C31] mt-2 px-2 py-1"
+                        >
+                          View all {link.name.toLowerCase()} &rarr;
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
             ))}
+
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-8 flex items-center justify-center w-full py-4 bg-[#8B1C31] text-white font-bold rounded-xl shadow-lg active:scale-[0.98] transition-transform"
+              style={{
+                transition: 'opacity 400ms ease, transform 400ms ease',
+                transitionDelay: mobileMenuOpen ? `${120 + navLinks.length * 60}ms` : '0ms',
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(16px)',
+              }}
+            >
+              Request Consultation
+            </Link>
           </div>
         </div>
-      )}
+      </div>
+
     </header>
   );
 }
