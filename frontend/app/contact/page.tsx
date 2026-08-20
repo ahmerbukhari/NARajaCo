@@ -101,7 +101,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-red-800 font-bold">Submission Failed</h4>
                     <p className="text-red-700 text-sm mt-1 font-medium">
-                      Message could not be sent. Please email us directly at naureen.akhtar1957@gmail.com
+                      Message could not be sent. Please email us directly at shujarehman@narcoca.com
                     </p>
                   </div>
                 </div>
@@ -244,8 +244,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-slate-900 font-bold mb-1">Phone</h4>
                     <p className="text-slate-600 text-sm font-medium">
-                      <a href="tel:+923425058621" className="hover:text-[#8B1C31] transition-colors">+92 342 505 8621</a><br />
-                      <a href="tel:+923455919859" className="hover:text-[#8B1C31] transition-colors">+92 345 591 9859</a>
+                      <a href="tel:+9232452144471" className="hover:text-[#8B1C31] transition-colors">+92 324 52144471</a>
                     </p>
                   </div>
                 </li>
@@ -256,8 +255,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-slate-900 font-bold mb-1">Email</h4>
                     <p className="text-slate-600 text-sm font-medium break-all">
-                      <a href="mailto:naureen.akhtar1957@gmail.com" className="hover:text-[#8B1C31] transition-colors">naureen.akhtar1957@gmail.com</a><br />
-                      <a href="mailto:moeensatti6@gmail.com" className="hover:text-[#8B1C31] transition-colors">moeensatti6@gmail.com</a>
+                      <a href="mailto:shujarehman@narcoca.com" className="hover:text-[#8B1C31] transition-colors">shujarehman@narcoca.com</a>
                     </p>
                   </div>
                 </li>

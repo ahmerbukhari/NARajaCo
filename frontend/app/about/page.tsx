@@ -36,7 +36,6 @@ export default function AboutPage() {
     {
       name: "Naureen Akhtar Raja",
       role: "Managing Partner",
-      credentials: "ACA (ICAP)",
       initials: "NR",
       bio: [
         "Naureen Akhtar Raja is a seasoned Chartered Accountant with over a decade of experience in audit, taxation, and advisory. Having served in leadership roles at EY Ford Rhodes and Deloitte Middle East, she brings unmatched expertise in financial reporting, compliance, and governance.",
@@ -44,33 +43,12 @@ export default function AboutPage() {
       ]
     },
     {
-      name: "Moeen Javed Satti",
-      role: "Partner, Advisory Services",
-      credentials: "IPA & IFA (Australia)",
-      initials: "MS",
-      bio: [
-        "Moeen Javed Satti is a result-oriented finance leader with more than 12 years of experience in audit, advisory, and financial management. His career includes serving as CFO of a public listed company, where he successfully steered financial strategy, risk management, and operational efficiency.",
-        "With a strong foundation at PwC (A.F. Ferguson) and global memberships with IPA and IFA (Australia), Moeen combines technical expertise with practical leadership. He specializes in IFRS, financial analysis, and strategic finance, ensuring clients benefit from both strategic insight and operational excellence."
-      ]
-    },
-    {
       name: "Shuja Rehman",
       role: "Partner, Business Process Solutions",
-      credentials: "Oracle SCM & HCM, Coupa Core Implementation",
       initials: "SR",
       bio: [
         "Shuja Rehman is an accomplished ERP and business process specialist with extensive experience in digitalization, automation and process improvement initiatives. His career spans leading roles at Deloitte Middle East, PwC (A.F. Ferguson), Telenor Group, and Tawal Telecom, where he spearheaded automation and process improvement initiatives for global clients.",
         "Certified in Oracle SCM & HCM and Coupa Core Implementation, he has successfully delivered ERP solutions for industry leaders such as AstraZeneca, Tawal, Telenor and other key players in medicine and health, technology, FMCG and financial sectors. Shuja's expertise lies in bridging technology with business strategy, enabling organizations to achieve efficiency and sustainable growth."
-      ]
-    },
-    {
-      name: "Haroon Khan Marwat",
-      role: "Partner, Audit",
-      credentials: "SAP Certified",
-      initials: "HM",
-      bio: [
-        "Haroon Marwat brings decades of experience in audit and financial consulting, with a strong foundation in SAP-certified systems and international audit practices. His career spans roles with KPMG and Tophat Consulting, where he led complex audit engagements across sectors.",
-        "Currently serving as Finance Director for Seasons Environmental Consulting, Haroon combines strategic insight with hands-on expertise in governance, compliance, and financial controls. His leadership strengthens the firm's assurance capabilities and commitment to delivering transparent, high-impact audit solutions."
       ]
     }
   ];
@@ -223,9 +201,6 @@ export default function AboutPage() {
                       {leader.name}
                     </h3>
                     <div className="text-[#8B1C31] text-sm font-bold uppercase tracking-wide">{leader.role}</div>
-                    {leader.credentials ? (
-                      <div className="text-slate-500 text-sm font-bold mt-1">{leader.credentials}</div>
-                    ) : null}
                   </div>
                 </div>
                 <div className="space-y-4">

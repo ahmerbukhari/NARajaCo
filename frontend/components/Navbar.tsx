@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import { services, industries } from "@/lib/data";
 
 export default function Navbar() {
@@ -51,6 +51,7 @@ export default function Navbar() {
   ];
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/70 backdrop-blur-lg border-b border-slate-200 py-3 shadow-sm" : "bg-transparent py-5"
@@ -135,11 +136,11 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle - morphing hamburger */}
         <button
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-label="Open menu"
           aria-expanded={mobileMenuOpen}
-          className={`lg:hidden relative z-[60] w-11 h-11 flex items-center justify-center rounded-full transition-all duration-300 active:scale-90 ${
+          className={`lg:hidden relative w-11 h-11 flex items-center justify-center rounded-full transition-all duration-300 active:scale-90 ${
             mobileMenuOpen
-              ? 'bg-[#8B1C31] text-white shadow-lg'
+              ? 'opacity-0 pointer-events-none'
               : isScrolled
                 ? 'text-[#8B1C31]'
                 : 'text-[#8B1C31] bg-white/90 backdrop-blur-md shadow-sm'
@@ -153,6 +154,8 @@ export default function Navbar() {
           </span>
         </button>
       </div>
+
+      </header>
 
       {/* Mobile Navigation - slide-in panel */}
       <div
@@ -175,6 +178,14 @@ export default function Navbar() {
           {/* Burgundy header with the diagonal motif */}
           <div className="relative overflow-hidden bg-[#8B1C31] px-6 pt-8 pb-10 shrink-0">
             <div className="absolute -top-10 -right-16 w-56 h-56 bg-[#6A1525] opacity-60 skew-x-[-15deg]"></div>
+            <button
+              aria-label="Close menu"
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-6 right-5 z-10 w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-colors active:scale-90"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
             <div className="relative flex items-center gap-3 pr-12">
               <Image src="/logo-white.png" alt="" width={1093} height={1069} className="w-10 h-auto" />
               <div className="flex flex-col">
@@ -276,8 +287,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-    </header>
+    </>
   );
 }
 
