@@ -16,46 +16,22 @@ export default function ContactPage() {
     setSubmitStatus("idle");
 
     try {
-      // Note: In a real app, these would be environment variables
-      // process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-      // process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-      // process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      
-      // Using fetch to EmailJS REST API instead of the SDK to avoid dependency issues
       const formData = new FormData(formRef.current!);
-      const data = {
-        service_id: "YOUR_SERVICE_ID",
-        template_id: "YOUR_TEMPLATE_ID",
-        user_id: "YOUR_PUBLIC_KEY",
-        template_params: {
-          user_name: formData.get("user_name"),
-          user_email: formData.get("user_email"),
-          user_phone: formData.get("user_phone"),
-          company_name: formData.get("company_name"),
-          subject: formData.get("subject"),
-          message: formData.get("message"),
-        }
-      };
 
-      // We'll attempt to send, but if keys are missing/invalid, we'll catch the error
-      // and display the requested fallback message.
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      const response = await fetch("/send.php", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to send email");
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || "Failed to send message");
       }
-      
+
       setSubmitStatus("success");
       formRef.current?.reset();
     } catch (error) {
-      console.error("EmailJS Error:", error);
-      // As per PRD: On failure, display inline error message
+      console.error("Contact form error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -108,6 +84,16 @@ export default function ContactPage() {
               )}
 
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot: hidden from people, filled in by bots. send.php
+                    silently discards any submission where this is present. */}
+                <input
+                  type="text"
+                  name="company_website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute left-[-9999px] w-px h-px opacity-0"
+                />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="user_name" className="text-sm font-bold text-slate-700">Full Name *</label>
@@ -244,7 +230,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-slate-900 font-bold mb-1">Phone</h4>
                     <p className="text-slate-600 text-sm font-medium">
-                      <a href="tel:+9232452144471" className="hover:text-[#8B1C31] transition-colors">+92 324 52144471</a>
+                      <a href="tel:+923245214447" className="hover:text-[#8B1C31] transition-colors">+92 324 5214447</a>
                     </p>
                   </div>
                 </li>
