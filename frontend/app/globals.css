@@ -132,3 +132,9 @@
     transform: translateY(-10px);
   }
 }
+
+/* Countdown bar for the auto-dismissing contact-form banner. */
+@keyframes shrink {
+  from { width: 100%; }
+  to   { width: 0%; }
+}

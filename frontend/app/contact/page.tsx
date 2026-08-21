@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import { MapPin, Phone, Mail, Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import { MapPin, Phone, Mail, Send, Loader2, CheckCircle2, AlertCircle, X } from "lucide-react";
 import { services } from "@/lib/data";
 import PageHero from "@/components/PageHero";
 
@@ -9,6 +9,15 @@ export default function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorDetail, setErrorDetail] = useState<string | null>(null);
+
+  // Auto-dismiss the success banner; errors stay until dismissed so the
+  // fallback email address remains readable.
+  useEffect(() => {
+    if (submitStatus !== "success") return;
+    const timer = setTimeout(() => setSubmitStatus("idle"), 8000);
+    return () => clearTimeout(timer);
+  }, [submitStatus]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,15 +32,34 @@ export default function ContactPage() {
         body: formData,
       });
 
-      const result = await response.json().catch(() => ({}));
+      // send.php always answers with JSON. Anything else means the endpoint
+      // itself is wrong - 404 when PHP was not uploaded, or an HTML error page
+      // when PHP failed - so report that distinctly rather than "failed".
+      const bodyText = await response.text();
+      let result: { ok?: boolean; error?: string } = {};
+      try {
+        result = JSON.parse(bodyText);
+      } catch {
+        console.error(
+          `Contact form: /send.php returned non-JSON (HTTP ${response.status}).`,
+          bodyText.slice(0, 300)
+        );
+        throw new Error(
+          response.status === 404
+            ? "The mail endpoint is missing on this server."
+            : `The mail endpoint returned an unexpected response (HTTP ${response.status}).`
+        );
+      }
+
       if (!response.ok || !result.ok) {
-        throw new Error(result.error || "Failed to send message");
+        throw new Error(result.error || `Sending failed (HTTP ${response.status}).`);
       }
 
       setSubmitStatus("success");
       formRef.current?.reset();
     } catch (error) {
       console.error("Contact form error:", error);
+      setErrorDetail(error instanceof Error ? error.message : null);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -62,23 +90,52 @@ export default function ContactPage() {
               <h3 className="text-2xl font-extrabold text-slate-900 mb-8">Send us a message</h3>
               
               {submitStatus === "success" && (
-                <div className="mb-8 p-4 rounded-xl bg-green-50 border border-green-200 flex items-start gap-3">
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="relative mb-8 p-4 pr-12 rounded-xl bg-green-50 border border-green-200 flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-300"
+                >
                   <CheckCircle2 className="w-6 h-6 text-green-600 shrink-0" />
                   <div>
                     <h4 className="text-green-800 font-bold">Message Sent Successfully</h4>
                     <p className="text-green-700 text-sm mt-1 font-medium">Thank you for reaching out. Our team will get back to you shortly.</p>
                   </div>
+                  <button
+                    type="button"
+                    aria-label="Dismiss message"
+                    onClick={() => setSubmitStatus("idle")}
+                    className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-green-700 hover:bg-green-100 active:scale-90 transition-all"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                  {/* countdown bar showing the auto-dismiss */}
+                  <span className="absolute bottom-0 left-0 h-[3px] bg-green-400/70 rounded-b-xl animate-[shrink_8s_linear_forwards]"></span>
                 </div>
               )}
 
               {submitStatus === "error" && (
-                <div className="mb-8 p-4 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3">
+                <div
+                  role="alert"
+                  className="relative mb-8 p-4 pr-12 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-300"
+                >
+                  <button
+                    type="button"
+                    aria-label="Dismiss message"
+                    onClick={() => setSubmitStatus("idle")}
+                    className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-red-700 hover:bg-red-100 active:scale-90 transition-all"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
                   <AlertCircle className="w-6 h-6 text-red-600 shrink-0" />
                   <div>
                     <h4 className="text-red-800 font-bold">Submission Failed</h4>
                     <p className="text-red-700 text-sm mt-1 font-medium">
-                      Message could not be sent. Please email us directly at shujarehman@narcoca.com
+                      Message could not be sent. Please email us directly at{" "}
+                      <a href="mailto:shujarehman@narcoca.com" className="underline">shujarehman@narcoca.com</a>
                     </p>
+                    {errorDetail ? (
+                      <p className="text-red-600/80 text-xs mt-2 font-medium">{errorDetail}</p>
+                    ) : null}
                   </div>
                 </div>
               )}
